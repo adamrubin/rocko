@@ -7,7 +7,7 @@
 
 <script type="text/javascript" src="http://temp-node-adam.herokuapp.com/faye.js"></script>
 <script type="text/javascript">
-var client = new Faye.Client('http://temp-node-adam.herokuapp.com:58551/faye');
+var client = new Faye.Client('http://temp-node-adam.herokuapp.com:58551');
 console.log(client);
 
 var subscription = client.subscribe('/foo', function(message) {
