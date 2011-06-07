@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>hi</title>
+  <script type="text/javascript" src="http://temp-node-adam.herokuapp.com/faye.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+var client = new Faye.Client('http://temp-node-adam.herokuapp.com/faye');
+console.log(client);
+
+var subscription = client.subscribe('/foo', function(message) {
+  alert(message);
+  console.log(message);
+});
+</script>
+</body>
+</html>
