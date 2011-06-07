@@ -9,7 +9,8 @@
 var client = new Faye.Client('http://temp-node-adam.herokuapp.com/faye');
 console.log(client);
 
-var subscription = client.subscribe('/foo', function(message) {
+var subscription = client.subscribe('http://temp-node-adam.herokuapp.com/faye/foo', function(message) {
+//var subscription = client.subscribe('/foo', function(message) {
   alert(message);
   console.log(message);
 });
