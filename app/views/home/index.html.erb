@@ -8,7 +8,7 @@
 	var client = new Faye.Client('http://temp-node-adam.herokuapp.com/faye', { timeout: 5 });
 	var subscription = client.subscribe('/foo', function(message) {
 		alert(message);
-	  // handle message
+	  // handle message...
 	});	
 </script>
 
