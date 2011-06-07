@@ -1,18 +1,18 @@
 <html>
 <head>
   <title>hi</title>
-  <script type="text/javascript" src="http://temp-node-adam.herokuapp.com/faye.js"></script>
 </head>
 <body>
+<h1>test</h1>
 
+<script type="text/javascript" src="http://temp-node-adam.herokuapp.com/faye.js"></script>
 <script type="text/javascript">
 //var client = new Faye.Client('http://temp-node-adam.herokuapp.com/faye');
 var client = new Faye.Client('http://temp-node-adam.herokuapp.com/');
 console.log(client);
 
 var subscription = client.subscribe('/foo', function(message) {
-  alert(message);
-  console.log(message);
+//  console.log(message);
 });
 </script>
 </body>
