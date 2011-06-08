@@ -1,14 +1,17 @@
-<head>
-	<title>Hi</title>
-</head>
-<body>
+<div id="messages">
+	<ul>
+		<li>...</li>
+	</ul>
+</div>
 
-<script type="text/javascript" src="http://temp-node-adam.herokuapp.com/faye.js"></script>
 <script type="text/javascript">
-	var client = new Faye.Client('http://temp-node-adam.herokuapp.com/faye', { timeout: 5 });
+$(document).ready(function() {
+
+	var client = new Faye.Client('http://temp-node-adam.herokuapp.com:80/faye');
 	var subscription = client.subscribe('/foo', function(message) {
-		alert(message);
-	  // handle message...
-	});	
+		$("#messages ul").append("<li>" + message + "</li>");
+	});
+});
 </script>
 
+<%= render '/posts/form' %>

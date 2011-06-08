@@ -1,11 +1,5 @@
-<head>
-<title>hi</title>
-</head>
-<body>
-...
-<script type="text/javascript" src="http://temp-node-adam.herokuapp.com/faye.js"></script>
-
-<script type="text/javascript">
-  var client = new Faye.Client('http://temp-node-adam.herokuapp.com/faye');
-  client.publish('/foo', {text: 'Hi there'});
-</script>
+<%
+	message = {:channel => "/foo", :data => "hi there"}
+	uri = URI.parse("http://temp-node-adam.herokuapp.com:80/faye")
+	Net::HTTP.post_form(uri, :message => message.to_json)
+%>
