@@ -11,7 +11,9 @@
 $(document).ready(function() {
 	$('#new_post').submit(function(event) {
 		sendMessage($(this));
-		event.preventDefault();
+		$("#post_message").val("");
+		// event.preventDefault();
+		return false
 	});
 });
 </script>
