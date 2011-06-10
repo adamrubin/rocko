@@ -12,11 +12,9 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save!
-
       	message = {:channel => "/foo", :data => @post.message }
-      	uri = URI.parse("http://temp-node-adam.herokuapp.com:80/faye")
+      	uri = URI.parse("#{ApplicationHelper::NODE_SERVER}/faye")
       	Net::HTTP.post_form(uri, :message => message.to_json)
-
 
         format.js
         format.html { redirect_to new_post_path }

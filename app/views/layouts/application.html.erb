@@ -1,10 +1,14 @@
 <html>
 <head>
 	<title>Hi</title>
+	<script>
+		var NODE_SERVER = '<%=ApplicationHelper::NODE_SERVER%>';
+	</script>
+	
+	
 	<%= javascript_include_tag :defaults %>
 	<%= stylesheet_link_tag "layout" %>
-	<script type="text/javascript" src="http://temp-node-adam.herokuapp.com/faye.js"></script>
-
+	<script type="text/javascript" src="<%=ApplicationHelper::NODE_SERVER%>/faye.js"></script>
 </head>
 <body>
 	<%=yield%>

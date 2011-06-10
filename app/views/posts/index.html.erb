@@ -1,5 +1,0 @@
-<%
-	message = {:channel => "/foo", :data => "hi there"}
-	uri = URI.parse("http://temp-node-adam.herokuapp.com:80/faye")
-	Net::HTTP.post_form(uri, :message => message.to_json)
-%>

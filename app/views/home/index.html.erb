@@ -6,8 +6,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-	var client = new Faye.Client('http://temp-node-adam.herokuapp.com:80/faye');
+	var client = new Faye.Client('<%=ApplicationHelper::NODE_SERVER%>/faye');
 	var subscription = client.subscribe('/foo', function(message) {
 		$("#messages ul").append("<li>" + message + "</li>");
 	});
