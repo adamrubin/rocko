@@ -1,16 +1,8 @@
+<%= render '/posts/form' %>
+
 <div id="messages">
 	<ul>
-		<li>...</li>
+		<li></li>
 	</ul>
 </div>
 
-<script type="text/javascript">
-$(document).ready(function() {
-	client = new Faye.Client('<%=ApplicationHelper::NODE_SERVER%>/faye');
-	var subscription = client.subscribe('/foo', function(message) {
-		$("#messages ul").append("<li>" + message + "</li>");
-	});
-});
-</script>
-
-<%= render '/posts/form' %>
