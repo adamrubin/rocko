@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @post = Post.new
+    respond_to do |format|
+      format.html
+    end
   end
 end

@@ -1,4 +1,13 @@
 class PostsController < ApplicationController
+  def index
+    @post = Post.new
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
   def new
     @post = Post.new
 
