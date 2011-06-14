@@ -3,8 +3,8 @@ class PostsController < ApplicationController
     @post = Post.new
 
     respond_to do |format|
-      format.js 
-      format.html { render :layout => false }
+      format.js
+      format.html
     end
   end
 
